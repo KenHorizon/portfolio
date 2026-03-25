@@ -1,0 +1,233 @@
+:root {
+	--animation-time: 5s; 
+}
+.background {
+	z-index: -1;
+	scale: 0.15;
+}
+.stars {
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
+	animation-name: stars;
+	animation-delay: 5s;
+	animation-duration: var(--animation-time);
+	animation-timing-function: ease;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+.star_container {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.star_container span:nth-child(1) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	top: -8%;
+	left: 10%;
+	scale: 0.15;
+}
+
+.star_container span:nth-child(2) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	transform: rotate(45deg);
+	top: -10%;
+	left: 50%;
+	scale: 0.25;
+}
+
+
+.star_container span:nth-child(3) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	top: -10%;
+	right: 10%;
+	scale: 0.15;
+}
+
+.star_container span:nth-child(4) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	transform: rotate(-45deg);
+	top: -8%;
+	right: 5%;
+	scale: 0.25;
+}
+.star_container span:nth-child(5) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	transform: rotate(45deg);
+	top: -3%;
+	left: 2%;
+	scale: 0.15;
+}
+.star_container span:nth-child(6) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	top: 25%;
+	left: 2%;
+	scale: 0.15;
+}
+.star_container span:nth-child(7) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	transform: rotate(45deg);
+	top: 10%;
+	right: 2%;
+	scale: 0.25;
+}
+.star_container span:nth-child(8) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	top: 15%;
+	right: 25%;
+	scale: 0.1;
+}
+.star_container span:nth-child(9) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	transform: rotate(45deg);
+	top: 25%;
+	left: 50%;
+	scale: 0.15;
+}
+.star_container span:nth-child(10) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	transform: rotate(45deg);
+	top: 5%;
+	left: 25%;
+	scale: 0.25;
+}
+.star_container span:nth-child(11) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	top: 8%;
+	right: 21%;
+	scale: 0.1;
+}
+.star_container span:nth-child(12) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	transform: rotate(45deg);
+	top: 15%;
+	right: 25%;
+	scale: 0.15;
+}
+.star_container span:nth-child(13) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	transform: rotate(45deg);
+	top: 75%;
+	left: 14%;
+	scale: 0.25;
+}
+.star_container span:nth-child(14) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	top: 9%;
+	left: 13%;
+	scale: 0.1;
+}
+.star_container span:nth-child(15) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	transform: rotate(-45deg);
+	top: 75%;
+	left: 14%;
+	scale: 0.15;
+}
+.star_container span:nth-child(16) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	transform: rotate(-45deg);
+	top: 75%;
+	right: 13%;
+	scale: 0.1;
+}
+.star_container span:nth-child(17) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	transform: rotate(-45deg);
+	top: 65%;
+	right: 5%;
+	scale: 0.25;
+}
+.star_container span:nth-child(18) {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	transform: rotate(-45deg);
+	top: 65%;
+	left: 13%;
+	scale: 0.15;
+}
+.star_slider {
+	position: fixed;
+	overflow: hidden;
+	z-index: 2;
+	transform: rotate(45deg);
+	top: -15%;
+	left: 2%;
+	scale: 0.15;
+	transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#sign_up:checked ~ .star_slider {
+	left: 50%;
+}
+
+.star0:hover, .star2:hover {
+	scale: 25%;
+	transform: rotate(45deg);
+}
+.star1:hover, .star3:hover  {
+	scale: 15%;
+	transform: rotate(90deg);
+}
+.star4:hover, .star5:hover  {
+	scale: 20%;
+	transform: rotate(90deg);
+}
+
+@keyframes full_rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes stars {
+	0% {
+		opacity: 0; 
+	}
+	50% {
+		opacity: 100%;
+	}
+	100% {
+		opacity: 0;
+	}
+}

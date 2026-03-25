@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link href="star_position.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/KenHorizon/CSS-Assets/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+  
+  <link rel="icon" type="image/x-icon" href="logo.ico">
+</head>
+<style>
+  @font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;    
+	  src: url("icons.woff2");
+  }
+  .material-icons {
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      line-height: 0;
+      font-size: 24px;
+      padding: 2px;
+      letter-spacing: normal;
+      text-transform: none;
+      white-space: nowrap;
+      display: inline-block;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+  }
+  body {
+    margin: 0;
+    height: 100vh;
+    background-color:rgb(74, 79, 93);
+  }
+  .profile-pic {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: block;
+  }
+  .wrap-text {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 10%;
+  }
+  .profile-text{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 32px;
+    font-variant: small-caps;
+    color: white;
+  }
+  .profile-text-contain {
+    position: fixed;
+    line-height: 10%;
+  }
+  .profile-text-name{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 64px;
+    color: white;
+  }
+  .profile-text-name-subs{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    font-variant: small-caps;
+    color: white;
+  }
+  .profile-container { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(30, 40, 67, 0.507);
+    height: 100vh;
+    width: 50vw;
+    overflow: hidden;
+  }
+  .portfolio { 
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+  }
+  .portfolio-second {
+    padding: 0.5em;
+    overflow: auto;
+  }
+  .text {
+    color: white;
+  }
+  .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  }
+  .fa:hover {
+      opacity: 0.7;
+  }
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.icon-texts {
+	border: none;
+	display: flex;
+  align-items: stretch;
+	text-decoration: none;
+}
+::-webkit-scrollbar
+{
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.container-rooms {
+  display: grid;
+  grid-template-columns: auto;
+  padding: 10px;
+  height: 10%;
+  gap: 10px;
+}
+.container-rooms-pic {
+  width: 30vw;
+}
+</style>
+<script>
+
+// Hook from old project I made
+// Animated Fade in and Out Stars in Background
+const element = document.getElementById("star_twinkle");
+const starContainerList = element.querySelectorAll('.stars');
+
+function setAnimationDuration() {
+    const animationDelay = Math.min(Math.max(5, Math.random() * 5), 3);
+    var random = 0 + Math.floor(Math.random() * starContainerList.length);
+    starContainerList[random].style.setProperty('animation-delay', animationDelay + 's');
+}
+function changeAnimationTime() {
+  setAnimationDuration();
+}
+
+setInterval(hoverTextEffects, 1000)
+
+setInterval(changeAnimationTime, 10000)
+
+function ClipboardText(id) {
+    var copyText = document.getElementById("id");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+    // alert("Copied the text: " + copyText.value);
+}
+</script>
+<body>
+<div class="portfolio">
+  <profile>
+    <div class="profile-container" style="gap: 1.3em;">
+      <img class="profile-pic" src="img.png">
+      <div class="column-container profile-text">
+          <a class="profile-text-name">Hello, I'm Vincent</a>
+        <a class="profile-text-name-subs">A Game Developer and Graphics Artist</a>
+        <br>
+        <a class="profile-text"><u>Contact</u></a>
+        <a class="profile-text">Phone: 09669071639</a>
+        <br>
+        <a class="profile-text"><u>Social Media</u></a>
+        <br>
+        <div class="row-container" style="gap: 0.5em;">
+          <a href="https://www.facebook.com/kenhorizon.1008/" target="_blank" class="fa fa-facebook"></a>
+          <a onclick="ClipboardText('vincentruales845@gmail.com')" class="fa fa-google"></a>
+          <a href="https://x.com/KenHorizon15" target="_blank" class="fa fa-twitter"></a>
+          <a href="https://www.instagram.com/kenhorizon.arts/" target="_blank" class="fa fa-instagram"></a>
+        </div>
+      </div>
+    </div>
+  </profile>
+  <div class="portfolio-second text">
+    <aboutme>
+    <h1 class="icon-texts" style="font-variant: small-caps;">
+        <span class="material-icons" style="font-size: 64px;">info</span>
+        About Me
+    </h1>
+      <p>Hello!, My name is Vincent John R. Ruales, I'm a Game Developer and Graphics Artist learning all
+         the kinds of all that I can handle</p>
+      <hr>
+    </aboutme>
+  <skill>
+    <h1 class="icon-texts" style="font-variant: small-caps;">
+        <span class="material-icons" style="font-size: 64px;">star</span>
+        Skill
+    </h1>
+    <br>
+    <div class="list">  
+      <a class="list-item">Drawing: Cartoonist</a>
+      <a class="list-item">Drawing: Anime Style</a>
+      <a class="list-item">Animations</a>
+      <a class="list-item">Modeling</a>
+      <a class="list-item">Painting</a>
+      <a class="list-item">Coding: Java Language</a>
+      <a class="list-item">Coding: C# Language</a>
+    </div>
+  </skill>
+  <projects>
+    <h1 class="icon-texts" style="font-variant: small-caps;">
+        <span class="material-icons" style="font-size: 64px;">workspaces</span>
+        Projects
+    </h1>
+    <div class="list">
+      <a onclick="swdesc.hidden^=1" class="list-item">Simple Website
+        <p hidden id="swdesc">A basic Website created by only using HTML to understand</p>
+      </a>
+      <a onclick="spdesc.hidden^=1" class="list-item">Student Portfolio
+        <p hidden id="spdesc">A beginner-friendly Student Profile page showcasing personal information and skills</p>
+      </a>
+      <a onclick="spdesc1.hidden^=1" class="list-item">Basic 2D Game
+        <p hidden id="spdesc1">A 2D Game created by only using Microsoft Visual Code Using Monogame Framework</p>
+      </a>
+      <a onclick="spdesc2.hidden^=1" class="list-item">Fan Arts
+        <p hidden id="spdesc2">Art featuring character from particular series or movie and created by using Paint Sai 2</p>
+      </a>
+      <a onclick="spdesc2.hidden^=1" class="list-item">Original Character
+        <p hidden id="spdesc2">Featuring original character that not came with particular character and created by using Paint Sai 2</p>
+      </a>
+    </div>
+  </projects>
+  <exampleprojects>
+    <h1 class="icon-texts" style="font-variant: small-caps;">
+        <span class="material-icons" style="font-size: 64px;">work</span>
+        Example Works:
+    </h1>
+    <div>
+      <a href="#" class="btn btn-0 icon-texts" style="font-variant: small-caps; font-size: 24px;">
+          <span class="material-icons" style="font-size: 64px;">work</span>
+          Modeling:
+      </a>
+      <div class="column-container" style="gap: 10px; width: 30vh;">
+        <img src="ex0.png"></img>
+        <img src="ex1.png"></img>
+        <img src="ex2.png"></img>
+        <img src="ex3.png"></img>
+        <img src="ex4.png"></img>
+        <img src="ex5.png"></img>
+      </div>
+    </div>
+    <br>
+    <div>
+      <a onclick="ew1.hidden^=1"
+      href="#" class="btn btn-0 icon-texts" style="font-variant: small-caps; font-size: 24px;">
+          <span class="material-icons" style="font-size: 64px;">gamepad</span>
+          Games:
+      </a>
+      <div class="container-rooms" id="gamedevexample">
+        <img class="container-rooms-pic" src="ex10.png"></img>
+        <img class="container-rooms-pic" src="ex11.png"></img>
+        <img class="container-rooms-pic" src="ex12.png"></img>
+        <img class="container-rooms-pic" src="ex13.png"></img>
+        <img class="container-rooms-pic" src="ex14.png"></img>
+        <img class="container-rooms-pic" src="ex15.png"></img>
+      </div>
+    </div>
+  </exampleprojects>
+</div>
+<img src="background.png" alt="" style="height: 100%; opacity: 0.2; position: fixed; z-index: -1;">
+<div id="star_twinkle" class="star_container">
+    <span><img class="stars background" src="star.png"></span>
+    <span><img class="stars background" src="star.png"></span>
+    <span><img class="stars background" src="star.png"></span>
+    <span><img class="stars background" src="star.png"></span>
+    <span><img class="stars background" src="star.png"></span>
+    <span><img class="stars background" src="star.png"></span>
+    <span><img class="stars background" src="star.png"></span>
+    <span><img class="stars background" src="star.png"></span>
+    <span><img class="stars background" src="star.png"></span>
+    <span><img class="stars background" src="star.png"></span>
+    <span><img class="stars background" src="star.png"></span>
+    <span><img class="stars background" src="star.png"></span>
+    <span><img class="stars background" src="star.png"></span>
+    <span><img class="stars background" src="star.png"></span>
+    <span><img class="stars background" src="star.png"></span>
+    <span><img class="stars background" src="star.png"></span>
+</div>
+</body>
+</html>
